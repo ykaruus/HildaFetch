@@ -1,0 +1,6 @@
+
+[+] OS& : {{OS}}
+[+] CPU& : {{CPU}}
+[+] Memory& : {{Memory usage}} / {{Memory}} GiB
+[+] Disk& : {{Disk Used}} / {{Disk}} GiB
+[+] Uptime& : {{Uptime}}

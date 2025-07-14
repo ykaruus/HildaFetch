@@ -1,0 +1,13 @@
+{
+    "username_color": "#80B9B9",
+    "colorPrimary": "#3B6E8F",
+    "colorSecundary": "#D46A6A",
+    "borderColor": "#7BA670",
+    "borderType": "rounded",
+
+    "frases": [
+        "Well, that was traumatic... but that’s the life of an adventurer.",
+        "The wilderness is calling.",
+        "Woffs are just misunderstood."
+    ]
+}
