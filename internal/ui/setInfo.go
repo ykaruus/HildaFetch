@@ -3,14 +3,10 @@ package ui
 import (
 	"fmt"
 	"hildafetch/internal/system"
+	"regexp"
 	"strings"
 	"time"
 )
-
-type InfoItem struct {
-	label string
-	value string
-}
 
 type InfoService struct {
 	cpu  *system.Cpu
@@ -18,6 +14,18 @@ type InfoService struct {
 	disk *system.DiskModel
 
 	layout *LayoutService
+}
+
+func getBoldWords(template string) []string {
+	re := regexp.MustCompile(`\*(.*?)\*`)
+	match := []string{}
+	matchs := re.FindAllStringSubmatch(template, -1)
+
+	for _, mat := range matchs {
+		match = append(match, mat[1])
+	}
+
+	return match
 }
 
 func NewInfoService(
@@ -77,13 +85,17 @@ func (info *InfoService) GetInfo() map[string]string {
 func (info *InfoService) SetInfo(os map[string]string, template string) string {
 	for key, value := range os {
 		placeholder := "{{" + key + "}}"
-		placeholderUmp := key + "&"
-
-		result := info.layout.CreateColumText(key)
 
 		template = strings.ReplaceAll(template, placeholder, value)
-		template = strings.ReplaceAll(template, placeholderUmp, result)
+	}
 
+	bolds := getBoldWords(template)
+
+	fmt.Println(bolds)
+
+	for _, bold := range bolds {
+		result := info.layout.CreateColumText(bold)
+		template = strings.ReplaceAll(template, fmt.Sprintf("*%s*", bold), result)
 	}
 
 	return template

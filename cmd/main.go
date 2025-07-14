@@ -53,6 +53,6 @@ func main() {
 	banner := ascii.SetAscii()
 	table := layout.CreateTable(result, os_username.Name+"@"+os_username.Username)
 
-	fmt.Print(layout.CreateFetch(banner, table) + "\n")
+	fmt.Println(layout.CreateFetch(banner, table))
 
 }
