@@ -23,7 +23,7 @@ Exemplo:
  ( o.o )  
   > ^ <
 ```
-
+> obs: fique atendo ao tamanho da arte ascii, pois podem quebrar a visualização do fetch.
 ---
 
 ## 🛠️ Configuração do Template de Informações
@@ -39,12 +39,12 @@ define o layout e a ordem das informações.
 ### Formato:
 
 ```
-[Texto Livre] : {{PLACEHOLDER}}
+*Texto Livre* : {{PLACEHOLDER}}
 ```
 
-* O texto antes de `:` é exibido exatamente como escrito (você pode incluir emojis, símbolos, etc.).
+* O texto entre ** é exibido exatamente como escrito (você pode incluir emojis, símbolos, etc.).
 * O valor dentro de `{{ }}` será substituído pela informação correspondente.
-
+* O : é o separador e você pode mudar isso também.
 ### Placeholders disponíveis:
 
 * `{{CPU}}` — Nome do processador
@@ -102,12 +102,3 @@ Exemplo:
 4. Execute o programa normalmente
 
 ---
-
-## 📄 Licença
-
-MIT License
-
----
-
-Se quiser, posso colocar uma seção de exemplo de saída ou instrução de execução.
-Me diz!
