@@ -23,7 +23,8 @@ Exemplo:
  ( o.o )  
   > ^ <
 ```
-> obs: fique atendo ao tamanho da arte ascii, pois podem quebrar a visualização do fetch.
+> AVISO: fique atento ao tamanho da arte ascii, asciis muito grandes podem quebrar a visualização do fetch.
+
 ---
 
 ## 🛠️ Configuração do Template de Informações
