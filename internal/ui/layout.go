@@ -56,7 +56,7 @@ func (layout *LayoutService) CreateTable(str string, os_name string) string {
 	}
 
 	system_title := lipgloss.NewStyle().Bold(true).Align(lipgloss.Center).Foreground(lipgloss.Color(layout.config.UsernameColor)).Render(os_name)
-	system_info := lipgloss.NewStyle().Width(50).Border(layoutBorder).BorderForeground(lipgloss.Color(layout.config.ColorSecundary)).Foreground(lipgloss.Color(layout.config.ColorSecundary)).Padding(1).Render(system_title + "\n" + str)
+	system_info := lipgloss.NewStyle().Width(50).Border(layoutBorder).BorderForeground(lipgloss.Color(layout.config.BorderColor)).Foreground(lipgloss.Color(layout.config.ColorSecundary)).Padding(1).Render(system_title + "\n" + str)
 	system_leng := lipgloss.NewStyle().Align(lipgloss.Left).Italic(true).Render(frases)
 	table := lipgloss.JoinVertical(lipgloss.Right, system_info, system_leng)
 
