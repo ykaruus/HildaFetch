@@ -1,6 +1,0 @@
-
-[+] *OS*: {{OS}}
-[+] *PROCESSADOR* : {{CPU}}
-[+] *Memoria* : {{Memory usage}} / {{Memory}} GiB
-[+] *Armazenamento* : {{Disk Used}} / {{Disk}} GiB
-[+] *Tempo de boot* : {{Uptime}}

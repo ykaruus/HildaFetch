@@ -1,10 +1,5 @@
 package utils
 
-import (
-	"encoding/json"
-	"os"
-)
-
 type Config struct {
 	ColorPrimary   string   `json:"colorPrimary"`
 	ColorSecundary string   `json:"colorSecundary"`
@@ -14,17 +9,22 @@ type Config struct {
 	Frases         []string `json:"frases"`
 }
 
-func OpenConfigJson(file string) (*Config, error) {
-	data, err := os.ReadFile(file)
+func SetConfigDefaults(config *Config) {
 
-	if err != nil {
-		return nil, err
+	config.ColorPrimary = "#80B9B9"
+	config.ColorSecundary = "#D46A6A"
+	config.UsernameColor = "#80B9B9"
+	config.BorderColor = "80B9B9"
+	config.BorderType = "rounded"
+	config.Frases = []string{
+		"Well, that was traumatic... but that’s the life of an adventurer.",
+		"The wilderness is calling.",
+		"Woffs are just misunderstood.",
 	}
-	var config Config
-	errJson := json.Unmarshal(data, &config)
 
-	if errJson != nil {
-		return nil, errJson
-	}
-	return &config, nil
+}
+
+func SetTemplateDefaults() string {
+
+	return "[+] *OS*: {{OS}}\n[+] *PROCESSADOR* : {{CPU}}\n[+] *Memoria* : {{Memory usage}} / {{Memory}} GiB\n[+] *Armazenamento* : {{Disk Used}} / {{Disk}} GiB\n[+] *Tempo de boot* : {{Uptime}}"
 }

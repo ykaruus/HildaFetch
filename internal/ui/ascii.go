@@ -1,23 +1,16 @@
 package ui
 
-import "os"
-
 type AsciiService struct {
 	file   []byte
 	layout *LayoutService
 }
 
-func NewAsciiService(filename string, layout *LayoutService) (*AsciiService, error) {
-	file, err := os.ReadFile(filename)
-
-	if err != nil {
-		return nil, err
-	}
+func NewAsciiService(file []byte, layout *LayoutService) *AsciiService {
 
 	return &AsciiService{
 		file:   file,
 		layout: layout,
-	}, nil
+	}
 }
 
 func (ascii *AsciiService) SetAscii() string {

@@ -1,0 +1,4 @@
+package utils
+
+const CREATE_PERMISSION_CODE int = 0666
+const READ_WRITE_PERMISSION_CODE int = 0755

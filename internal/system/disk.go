@@ -1,6 +1,6 @@
 package system
 
-import "github.com/shirou/gopsutil/v3/disk"
+import "github.com/shirou/gopsutil/disk"
 
 type DiskModel struct {
 	disk *disk.UsageStat

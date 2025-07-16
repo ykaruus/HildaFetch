@@ -91,8 +91,6 @@ func (info *InfoService) SetInfo(os map[string]string, template string) string {
 
 	bolds := getBoldWords(template)
 
-	fmt.Println(bolds)
-
 	for _, bold := range bolds {
 		result := info.layout.CreateColumText(bold)
 		template = strings.ReplaceAll(template, fmt.Sprintf("*%s*", bold), result)
